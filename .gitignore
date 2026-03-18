@@ -1,0 +1,30 @@
+# This is a comment - blank lines and lines starting with a hash are ignored.
+
+# Ignore a specific file
+my_api_keys.txt
+config.local.json
+
+# Ignore all files with a certain extension anywhere in the project
+*.log
+*.tmp
+*.backup
+
+# Ignore an entire directory (append a slash / to the directory name).
+# The slash at the end ensures that only the directory is ignored.
+/node_modules/
+/build/
+.vscode/
+.idea/
+
+# Ignore files at the root level only (use a leading slash /)
+/debug.log
+
+# Ignore files or directories at any level (use two asterisks **).
+**/temp/
+**/*.DS_Store
+
+# Negate a pattern: include a file that was excluded by a previous pattern.
+# This example ignores all log files except an important one.
+!important.log
+.env
+package.json
