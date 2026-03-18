@@ -27,4 +27,3 @@ config.local.json
 # This example ignores all log files except an important one.
 !important.log
 .env
-package.json
