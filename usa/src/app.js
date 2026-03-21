@@ -56,7 +56,7 @@ app.get("/:id", (req, res) => {
 
 app.post("/addFood", (req, res) => {
   // { id: 21, name: "Noodles", type: "Mama", toppings: ["green onion", "egg"]}
-  const { id, name, type, toppings } = req.body;
+  const { id } = req.body;
 
   // unifying response type to JSON, object, array, string
   // auto convert send(""); string, buffer, {}, [] => json
@@ -65,12 +65,56 @@ app.post("/addFood", (req, res) => {
     return res.json({ success: false, data: null, error: "Not valid Id" });
   }
 
+  const pizza = foods.filter((food) => food.id === id);
+
   foods.push({
     id: 21,
     name: "Noodles",
     type: "Mama",
     toppings: ["green onion", "egg"],
   });
+});
+
+/**
+ * What is this route supposed to do?
+ * 1. Update a food item in our database (foods) => [ food obj, food obj ]
+ * What variables do I need from the client? params, body, query
+ * 2. Grab them from the request.
+ * 3. Actually update my food;
+ */
+
+app.put("/updateFoodName/:id", (req, res) => {
+  const id = req.params.id;
+  const name = req.params.body;
+
+  if (!id || id <= 0) {
+    return res.status(400).send({ messsage: "error" });
+  }
+
+  if (!name || name === "") {
+    return res.status(400).send({ message: "error" });
+  }
+
+  // Success: if a food.id matches the id we pass in
+  // Failure: if we don't an food.id to the id we pass in
+  const foodItem = foods.filter((food) => food.id === id)[0];
+
+  if (!foodItem) {
+    return res.status(400).send({ message: "error" });
+  }
+
+  const updatedItem = { ...foodItem, name: name };
+  const updatedList = foods.map((food) => {
+    if (food.id === id) {
+      return updatedItem;
+    } else {
+      return food;
+    }
+  });
+
+  foods = updatedList;
+
+  res.json({ success: true, data: foods, error: null });
 });
 
 // exporting out server

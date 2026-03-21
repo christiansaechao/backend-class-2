@@ -118,5 +118,5 @@ export const foods = [
     name: "BBQ Ribs",
     type: "Main Course",
     toppings: ["BBQ Sauce", "Spices", "Honey"],
-  },
+  }
 ];
