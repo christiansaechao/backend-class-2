@@ -31,6 +31,8 @@ app.get("/:id", (req, res) => {
   // get pizza, comparing string === number || false strict comparison
   const food = foods.filter((food) => food.id === idNum);
 
+  // service layer
+
   // conditional
   if (food.length === 0) {
     return res

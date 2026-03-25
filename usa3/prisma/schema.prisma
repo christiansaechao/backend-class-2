@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Todos {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  isComplete  Boolean
+  created_at  DateTime @default(now())
+  updated_at  DateTime @default(now())
+}
+
+model Test {
+  id Int @id @default(autoincrement())
+}
