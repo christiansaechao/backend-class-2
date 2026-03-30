@@ -40,6 +40,9 @@ install any initial libraries
 setting up typescript - Read the docs if you want to know more about what each setting does: [https://www.typescriptlang.org/docs/]
 - Run npx tsc --init to initialize your typescsript config file. This'll create this file tsconfig.json
 ** REPLACE THE ENTIRE THING IN THERE WITH THIS, THIS SETUP WILL LET YOU DO MODULE (IMPORT / EXPORT) IN YOUR PROJECT**
+1. npm install typescript 
+2. npx tsc --init (initialize typescript config)
+3. replace tsconfig with config below
 [tsconfig.json]
 {
   "compilerOptions": {
@@ -58,6 +61,7 @@ setting up typescript - Read the docs if you want to know more about what each s
   },
   "include": ["src"]
 }
+4. install types: npm install @types/node && npm install @types/express
 
 In your package.json add in these script files
 [package.json]

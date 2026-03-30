@@ -13,15 +13,14 @@ router.get("/", async (req, res) => {
 
 // Faruk: GET: by ID: retgurn Todo by ID
 router.get("/post/:id", async (req, res) => {
-//   try {
-//     const id = req.params.id;
-//     const user = await prisma.todos.findUnique({
-//     });
-//   } catch {
-//     console.log(error);
-//   }
-
-//   return res.status(200);
+  //   try {
+  //     const id = req.params.id;
+  //     const user = await prisma.todos.findUnique({
+  //     });
+  //   } catch {
+  //     console.log(error);
+  //   }
+  //   return res.status(200);
 });
 
 // Arv: POST: requirements / parmaeters / part of the req.body
@@ -74,5 +73,6 @@ router.get("/post/:id", async (req, res) => {
 //     return res.send({ success: false, error: e });
 //   }
 // });
+
 
 export default router;
